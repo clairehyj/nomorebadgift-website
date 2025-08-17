@@ -4,7 +4,7 @@ email: contact@nomorebadgift.com
 description: >-
   The social gift-sharing app that helps you discover and share the perfect gifts
   with friends and family. Never give a bad gift again!
-baseurl: "/nomorebadgift" # the subpath of your site, e.g. /blog
+baseurl: "/nomorebadgift-website" # the subpath of your site, e.g. /blog
 url: "https://clairehjy.github.io" # the base hostname & protocol for your site
 twitter_username: nomorebadgift
 github_username: clairehjy
