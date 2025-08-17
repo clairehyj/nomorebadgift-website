@@ -1,0 +1,65 @@
+# Site settings
+title: NoMoreBadGift
+email: contact@nomorebadgift.com
+description: >-
+  The social gift-sharing app that helps you discover and share the perfect gifts
+  with friends and family. Never give a bad gift again!
+baseurl: "/nomorebadgift" # the subpath of your site, e.g. /blog
+url: "https://clairehjy.github.io" # the base hostname & protocol for your site
+twitter_username: nomorebadgift
+github_username: clairehjy
+
+# App store links (update when available)
+app_store_url: "#"
+google_play_url: "#"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Blog settings
+paginate: 5
+paginate_path: "/blog/page:num/"
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /blog/:year/:month/:day/:title/
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+
+# SEO settings
+logo: /assets/images/logo.png
+social:
+  name: NoMoreBadGift
+  links:
+    - https://twitter.com/nomorebadgift
+    - https://github.com/clairehjy/nomorebadgift
+
+# Default settings
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "NoMoreBadGift Team"
+  - scope:
+      path: ""
+    values:
+      layout: "default"

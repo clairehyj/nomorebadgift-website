@@ -1,0 +1,55 @@
+<footer class="site-footer h-card">
+  <data class="u-url" href="{{ "/" | relative_url }}"></data>
+
+  <div class="wrapper">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>{{ site.title | escape }}</h3>
+        <p>{{ site.description }}</p>
+        <div class="app-badges">
+          <a href="{{ site.app_store_url }}" class="app-badge-small">
+            <img src="{{ '/assets/images/app-store-badge.png' | relative_url }}" alt="Download on the App Store">
+          </a>
+          <a href="{{ site.google_play_url }}" class="app-badge-small">
+            <img src="{{ '/assets/images/google-play-badge.png' | relative_url }}" alt="Get it on Google Play">
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="{{ '/' | relative_url }}">Home</a></li>
+          <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
+          <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+          <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
+          <li><a href="{{ '/privacy/' | relative_url }}">Privacy Policy</a></li>
+          <li><a href="{{ '/terms/' | relative_url }}">Terms of Service</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Connect</h4>
+        <div class="social-links">
+          {%- if site.twitter_username -%}
+          <a href="https://twitter.com/{{ site.twitter_username }}">
+            <svg class="svg-icon"><use xlink:href="{{ '/assets/minima-social-icons.svg#twitter' | relative_url }}"></use></svg>
+          </a>
+          {%- endif -%}
+          {%- if site.github_username -%}
+          <a href="https://github.com/{{ site.github_username }}">
+            <svg class="svg-icon"><use xlink:href="{{ '/assets/minima-social-icons.svg#github' | relative_url }}"></use></svg>
+          </a>
+          {%- endif -%}
+        </div>
+        <p class="contact-info">
+          <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
