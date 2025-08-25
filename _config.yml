@@ -6,8 +6,8 @@ description: >-
   share wishlists, and give gifts that truly matter. Join thousands of women who never 
   give disappointing gifts again.
 tagline: "Give Gifts That Matter"
-baseurl: "/nomorebadgift-website" # the subpath of your site, e.g. /blog
-url: "https://clairehjy.github.io" # the base hostname & protocol for your site
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://nomorebadgift.com" # the base hostname & protocol for your site
 twitter_username: nomorebadgift
 github_username: clairehjy
 
@@ -18,7 +18,6 @@ google_play_url: "#"
 # Build settings
 markdown: kramdown
 highlighter: rouge
-theme: minima
 plugins:
   - jekyll-feed
   - jekyll-sitemap
