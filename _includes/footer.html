@@ -1,55 +1,85 @@
-<footer class="site-footer h-card">
+<footer class="site-footer h-card" role="contentinfo">
   <data class="u-url" href="{{ "/" | relative_url }}"></data>
 
   <div class="wrapper">
     <div class="footer-content">
-      <div class="footer-section">
-        <h3>{{ site.title | escape }}</h3>
-        <p>{{ site.description }}</p>
-        <div class="app-badges">
-          <a href="{{ site.app_store_url }}" class="app-badge-small">
-            <img src="{{ '/assets/images/app-store-badge.png' | relative_url }}" alt="Download on the App Store">
+      <div class="footer-section brand">
+        <div class="footer-brand">
+          <img src="{{ '/assets/images/logo.png' | relative_url }}" alt="" class="brand-icon" loading="lazy">
+          <span class="brand-name">{{ site.title | escape }}</span>
+        </div>
+        <p class="footer-mission">Empowering meaningful connections through thoughtful gift-giving. Join thousands of women who've transformed their gift-giving experience.</p>
+        <div class="app-badges-small" aria-label="Download our mobile app">
+          <a href="{{ site.app_store_url }}" class="app-badge" aria-label="Download on the App Store" rel="noopener">
+            <img src="{{ '/assets/images/app-store-badge.png' | relative_url }}" alt="Download on the App Store" loading="lazy">
           </a>
-          <a href="{{ site.google_play_url }}" class="app-badge-small">
-            <img src="{{ '/assets/images/google-play-badge.png' | relative_url }}" alt="Get it on Google Play">
+          <a href="{{ site.google_play_url }}" class="app-badge" aria-label="Get it on Google Play" rel="noopener">
+            <img src="{{ '/assets/images/google-play-badge.png' | relative_url }}" alt="Get it on Google Play" loading="lazy">
           </a>
         </div>
       </div>
 
       <div class="footer-section">
-        <h4>Quick Links</h4>
+        <h4>Discover</h4>
         <ul class="footer-links">
           <li><a href="{{ '/' | relative_url }}">Home</a></li>
-          <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
-          <li><a href="{{ '/about/' | relative_url }}">About</a></li>
-          <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
+          <li><a href="{{ '/blog/' | relative_url }}">Gift Inspiration</a></li>
+          <li><a href="{{ '/about/' | relative_url }}">About Us</a></li>
+          <li><a href="#" aria-label="How it works">How It Works</a></li>
+          <li><a href="#" aria-label="Success stories">Success Stories</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Support</h4>
+        <ul class="footer-links">
+          <li><a href="{{ '/contact/' | relative_url }}">Contact Us</a></li>
+          <li><a href="#" aria-label="Help center">Help Center</a></li>
+          <li><a href="#" aria-label="FAQ">FAQ</a></li>
           <li><a href="{{ '/privacy/' | relative_url }}">Privacy Policy</a></li>
           <li><a href="{{ '/terms/' | relative_url }}">Terms of Service</a></li>
         </ul>
       </div>
 
       <div class="footer-section">
-        <h4>Connect</h4>
-        <div class="social-links">
+        <h4>Connect with Us</h4>
+        <div class="social-links" aria-label="Follow us on social media">
           {%- if site.twitter_username -%}
-          <a href="https://twitter.com/{{ site.twitter_username }}">
-            <svg class="svg-icon"><use xlink:href="{{ '/assets/minima-social-icons.svg#twitter' | relative_url }}"></use></svg>
+          <a href="https://twitter.com/{{ site.twitter_username }}" aria-label="Follow us on Twitter" rel="noopener" target="_blank">
+            <span aria-hidden="true">🐦</span>
           </a>
           {%- endif -%}
-          {%- if site.github_username -%}
-          <a href="https://github.com/{{ site.github_username }}">
-            <svg class="svg-icon"><use xlink:href="{{ '/assets/minima-social-icons.svg#github' | relative_url }}"></use></svg>
+          <a href="https://instagram.com/nomorebadgift" aria-label="Follow us on Instagram" rel="noopener" target="_blank">
+            <span aria-hidden="true">📷</span>
           </a>
-          {%- endif -%}
+          <a href="https://facebook.com/nomorebadgift" aria-label="Like us on Facebook" rel="noopener" target="_blank">
+            <span aria-hidden="true">📘</span>
+          </a>
+          <a href="https://pinterest.com/nomorebadgift" aria-label="Follow us on Pinterest" rel="noopener" target="_blank">
+            <span aria-hidden="true">📌</span>
+          </a>
         </div>
-        <p class="contact-info">
-          <a href="mailto:{{ site.email }}">{{ site.email }}</a>
-        </p>
+        <div class="contact-info">
+          <div class="contact-item">
+            <span class="contact-icon" aria-hidden="true">📧</span>
+            <a href="mailto:{{ site.email }}" aria-label="Email us">{{ site.email }}</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon" aria-hidden="true">💬</span>
+            <span>We'd love to hear from you!</span>
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="footer-bottom">
-      <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}. All rights reserved.</p>
+      <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}. Made with 💖 for thoughtful gift-givers everywhere.</p>
+      <div class="footer-legal">
+        <a href="{{ '/privacy/' | relative_url }}">Privacy</a>
+        <a href="{{ '/terms/' | relative_url }}">Terms</a>
+        <a href="#" aria-label="Accessibility statement">Accessibility</a>
+        <a href="#" aria-label="Sitemap">Sitemap</a>
+      </div>
     </div>
   </div>
 </footer>
