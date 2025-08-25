@@ -312,6 +312,100 @@ description: "Discover perfect gifts through social connections. Share wishlists
         color: var(--text-light);
     }
 
+    /* Latest Blog Section */
+    .latest-blog {
+        padding: 6rem 0;
+        background: var(--gray-50);
+    }
+
+    .blog-preview-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    .blog-preview-card {
+        background: var(--white);
+        padding: 2rem;
+        border-radius: var(--border-radius-xl);
+        box-shadow: var(--shadow-md);
+        transition: all 0.3s ease;
+        border: 1px solid var(--gray-100);
+    }
+
+    .blog-preview-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-xl);
+        border-color: var(--primary-color);
+    }
+
+    .blog-meta {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+        color: var(--text-light);
+    }
+
+    .blog-meta .author {
+        color: var(--primary-color);
+        font-weight: 600;
+    }
+
+    .blog-preview-card h3 {
+        margin-bottom: 1rem;
+        font-size: 1.3rem;
+        line-height: 1.4;
+    }
+
+    .blog-preview-card h3 a {
+        color: var(--text-dark);
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .blog-preview-card h3 a:hover {
+        color: var(--primary-color);
+    }
+
+    .blog-preview-card p {
+        color: var(--text-medium);
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+    }
+
+    .blog-preview-card .read-more {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.9rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: all 0.3s ease;
+    }
+
+    .blog-preview-card .read-more:hover {
+        color: var(--primary-dark);
+        transform: translateX(3px);
+    }
+
+    .blog-preview-card .read-more::after {
+        content: '→';
+        transition: transform 0.3s ease;
+    }
+
+    .blog-preview-card .read-more:hover::after {
+        transform: translateX(2px);
+    }
+
+    .blog-cta {
+        text-align: center;
+    }
+
     /* Responsive Design */
     @media (max-width: 768px) {
         .hero-content {
@@ -341,6 +435,11 @@ description: "Discover perfect gifts through social connections. Share wishlists
         }
 
         .features-grid {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .blog-preview-grid {
             grid-template-columns: 1fr;
             gap: 2rem;
         }
@@ -494,6 +593,44 @@ description: "Discover perfect gifts through social connections. Share wishlists
                 <div class="testimonial-author">Jessica Kim</div>
                 <div class="testimonial-role">Sales Executive</div>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- Latest Blog Posts Section -->
+<section class="latest-blog">
+    <div class="container">
+        <div class="section-header">
+            <h2>Stories & Tips from Our Community</h2>
+            <p>Get inspired by real stories and expert advice from women who've mastered the art of thoughtful gift-giving.</p>
+        </div>
+        
+        <div class="blog-preview-grid">
+            {% assign recent_posts = site.posts | limit: 3 %}
+            {% for post in recent_posts %}
+                <article class="blog-preview-card">
+                    <div class="blog-meta">
+                        <time datetime="{{ post.date | date_to_xmlschema }}">
+                            {{ post.date | date: "%B %d, %Y" }}
+                        </time>
+                        {% if post.author %}
+                            <span class="author">by {{ post.author }}</span>
+                        {% endif %}
+                    </div>
+                    
+                    <h3><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
+                    
+                    {% if post.excerpt %}
+                        <p>{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
+                    {% endif %}
+                    
+                    <a href="{{ post.url | relative_url }}" class="read-more">Read More</a>
+                </article>
+            {% endfor %}
+        </div>
+        
+        <div class="blog-cta">
+            <a href="{{ '/blog/' | relative_url }}" class="btn btn-secondary">View All Stories</a>
         </div>
     </div>
 </section>
